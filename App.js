@@ -3,7 +3,6 @@ import { View, Text, Image, FlatList, StyleSheet } from "react-native";
 
 
 class App extends Component {
-  // Array de objetos com os dados das saladas
   saladas = [
     {
       id: "1",
@@ -61,7 +60,7 @@ class App extends Component {
   }
 }
 
-// 🎨 Estilos
+// Estilos
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -85,8 +84,8 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   row: {
-    flexDirection: "row", // Alinha imagem e texto lado a lado
-    alignItems: "center", // Centraliza verticalmente
+    flexDirection: "row",
+    alignItems: "center", 
   },
 
   imagem: {
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
     resizeMode: "contain",
   },
   textContainer: {
-    flex: 1, // Ocupa o restante do espaço
+    flex: 1, 
   },
   texto: {
     fontSize: 16,
