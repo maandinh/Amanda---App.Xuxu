@@ -49,8 +49,10 @@ class Salada extends Component {
             source={this.props.imagem}
             style={{ width: 300, height: 200,}}
           />
+          
         )}
       </View>
+      
     );
   }
 }
