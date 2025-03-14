@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView,} from 'react-native';
 
 class App extends Component {
   render() {
     return (
       
       <ScrollView style={{ padding: 10 }}>
-        <Text style={{ color: '#006400', fontSize: 25, marginBottom: 10, fontFamily: 'Emblema One' }}>
+        <Text style={{ color: '#006400', fontSize: 25, marginBottom: 10, marginTop: 20, fontFamily: 'Dancing Script' }}>
           Saladas
-        </Text>
-      
+          </Text>
+       
         <Salada 
           imagem={{ uri: "https://i.pinimg.com/736x/1b/a2/b6/1ba2b6271f63c759ad6f38d5d9fc13e7.jpg"}}
           titulo="Salada Waldorf"
@@ -51,8 +51,8 @@ class Salada extends Component {
             source={this.props.imagem}
             style={{ width: 300, height: 200, borderRadius: 20, }}
           />
-        <Text style={{ fontWeight: 'bold', fontSize: 18, fontFamily: 'Emblema One' }}>{this.props.titulo}</Text>
-        <Text style={{ marginVertical: 2 }}>{this.props.receita}</Text>
+        <Text style={{ fontWeight: 'bold', fontSize: 18, fontFamily: 'Bebas Neue' }}>{this.props.titulo}</Text>
+        <Text style={{ marginVertical: 2, fontSize:15, fontFamily: 'Emblema One' }}>{this.props.receita}</Text>
            
       
       </View>
@@ -62,3 +62,4 @@ class Salada extends Component {
 }
 
 export default App;
+
