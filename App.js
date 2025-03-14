@@ -6,7 +6,7 @@ class App extends Component {
     return (
       
       <ScrollView style={{ padding: 10 }}>
-        <Text style={{ color: '#006400', fontSize: 25, marginBottom: 10, marginTop: 20, fontFamily: 'Dancing Script' }}>
+        <Text style={{ color: '#006400', fontSize: 25, marginBottom: 10, marginTop: 20, fontFamily: 'Emblema One' }}>
           Saladas
           </Text>
        
@@ -51,7 +51,7 @@ class Salada extends Component {
             source={this.props.imagem}
             style={{ width: 300, height: 200, borderRadius: 20, }}
           />
-        <Text style={{ fontWeight: 'bold', fontSize: 18, fontFamily: 'Bebas Neue' }}>{this.props.titulo}</Text>
+        <Text style={{ fontWeight: 'bold', fontSize: 18, fontFamily: 'Emblema One' }}>{this.props.titulo}</Text>
         <Text style={{ marginVertical: 2, fontSize:15, fontFamily: 'Emblema One' }}>{this.props.receita}</Text>
            
       
