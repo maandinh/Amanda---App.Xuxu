@@ -22,7 +22,7 @@ class App extends Component {
           2 maçãs verdes ou vermelhas em cubos, 
           1/2 xícara de chá de nozes tostadas, 
           folhas de alface a gosto.`}
-          
+        
         />
         
         <Salada      
