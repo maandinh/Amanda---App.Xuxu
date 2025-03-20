@@ -19,9 +19,9 @@ class App extends Component {
 
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView style={{ padding: 10 }}>
+      
       <Topo imagem={{ uri: 'https://i.pinimg.com/736x/4d/c7/e7/4dc7e7134cf48216dbece029a792c4a2.jpg' }}></Topo>
-
         <Salada 
           imagem={{ uri: "https://i.pinimg.com/736x/1b/a2/b6/1ba2b6271f63c759ad6f38d5d9fc13e7.jpg" }}
           titulo="Salada Waldorf"
@@ -64,16 +64,15 @@ class App extends Component {
 class Topo extends Component {
   render() {
     return (
-      <View style={{ marginBottom: 20, padding: 10, borderRadius: 20 }}>
+      <View style={{ marginBottom: 20, padding: 5, borderRadius: 20, backgroundColor: '#f0f0f0'  }}>
       
          <Image
           source={this.props.imagem}
-          style={{ width: 400, height: 200, borderRadius: 20, marginTop: 40 }}
+          style={{ width: '80%', height: 400, borderRadius: 20, marginTop: 40, overflow: 'hidden', transform: [{ rotate: '90deg' }]  }}
         />   
           <Text style={{ color: '#006400', fontSize: 40, marginBottom: 10, fontFamily: 'Emblema One' }}>
           Saladas
         </Text> 
-        <View container style={ width: 100,  height: 300, borderRadius: 20, overflow: 'hidden',}>
       </View>
     );
   }
