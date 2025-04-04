@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, ScrollView, Button, TouchableOpacity,} from 'react-native';
+import { View, Text, Image, ScrollView, TouchableOpacity,} from 'react-native';
 
 class App extends Component {
   //Estrutura do Botão
@@ -15,16 +15,33 @@ class App extends Component {
   }
   
   //Estrutura Interna do Botão
-  entrar1 = () => {
-    this.setState({ nome1: 'Seja bem vindo à aplicação!' });
+  entrar1 = () => {this.setState({ nome1: `
+  ▸ Alface romana: Rica em fibras, vitaminas A e K, ajudando na digestão e saúde óssea.
+  ▸ Queijo parmesão: Fonte de proteínas e cálcio, essencial para ossos e dentes fortes.
+  ▸ Peito de frango (opcional): Excelente fonte de proteína magra, ideal para o crescimento muscular.
+  ▸ Croutons: Fornecem carboidratos e um toque crocante, mas podem aumentar as calorias.
+  ▸ Molho Caesar: Contém azeite e limão, que oferecem antioxidantes e ajudam a melhorar a saúde do coração.` });
   }
 
   entrar2 = () => {
-    this.setState({ nome2: 'Seja bem vindo à aplicação!' });
+    this.setState({ nome2: `
+  ▸ Tomate: Rico em licopeno e vitamina C, fortalece a imunidade e protege o coração.
+  ▸ Mussarela de búfala: Fonte de proteínas e cálcio, essencial para ossos e músculos.
+  ▸ Manjericão: Antioxidante natural, auxilia na digestão e reduz inflamações.
+  ▸ Azeite de oliva: Rico em gorduras saudáveis, ajuda na saúde do coração.
+  ▸ Sal e pimenta: Realçam o sabor e podem melhorar o metabolismo.` });
   }
 
   entrar3 = () => {
-    this.setState({ nome3: 'Seja bem vindo à aplicação!' });
+    this.setState({ nome3: `
+🥬 Alface: Rica em fibras e vitamina A, melhora a digestão.
+🥭 Manga: Alta em vitamina C, ajuda na imunidade.
+🍍 Abacaxi: Contém bromelina, facilita a digestão e reduz inchaço.
+🥝 Kiwi: Rico em vitamina C, melhora a imunidade e digestão.
+🍓 Morangos: Antioxidantes, bons para o coração e pele.
+🥥 Coco ralado: Gorduras saudáveis, ajuda no colesterol.
+🥜 Castanhas: Fonte de proteínas e antioxidantes.
+🍯🍋 Molho de iogurte com mel e limão: Melhora a digestão e tem antioxidantes.` });
   }
 
   entrar4 = () => {
@@ -74,6 +91,8 @@ class App extends Component {
 class Topo extends Component {
   render() {
     return (
+
+      //Style do Container//
       <View style={{ marginBottom: 20, padding: 1, borderRadius: 20, backgroundColor: '#a6b985'  }}>
       
          <Image
@@ -96,24 +115,39 @@ class Topo extends Component {
 class SaladaCaesar extends Component {
   render() {
     return (
+
+      //Style do Container//
       <View style={{ marginBottom: 20, padding: 1, borderRadius: 20, backgroundColor: '#ebd592',  flexDirection:  'column', 
       alignItems: 'center'}}>
 
-      <Image
-          source={this.props.imagem}
-          style={{ width: 150,  height: 150, borderRadius: 75,}}
-        />
+    <Image
+      source={this.props.imagem} style={{ width: 150,  height: 150, borderRadius: 75, marginTop: 10}}/>
 
-      <Text style={{ fontWeight: 'bold', fontSize: 40, fontFamily: 'Ink Free', padding: '15px',  }}>
-          {this.props.titulo}
-        </Text> 
+    <Text style={{ fontWeight: 'bold', fontSize: 40, fontFamily: 'Ink Free', padding: '15px',  }}>
+      {this.props.titulo}
+    </Text> 
 
-        <Button 
-          title="Vamos preparar? 🥗" onPress={this.props.entrar} />
-       <Text style={{fontSize: 30, color: 'red', textAlign:'center'}}>
+    <TouchableOpacity onPress={this.props.entrar}
+      style={{backgroundColor: '#9f8241', paddingVertical: 12, paddingHorizontal: 25, borderRadius: 20, marginTop: 10, marginBottom: 20 }}>
+      
+      <Text style={{ fontSize: 30, color: 'white', fontWeight: 'bold',  fontFamily: 'Agency FB', textAlign: 'center' }}>
+       Ingredientes 🥗
+      </Text>
+    </TouchableOpacity>
+
+    <Text style={{
+      fontSize: 20,
+      color: '#4a3f35',
+      textAlign: 'left',
+      paddingHorizontal: 20,
+      paddingBottom: 20, 
+      lineHeight: 26,
+      fontFamily: 'Agency FB',
+      maxWidth: '90%',
+      fontWeight: 'bold'}}>
+
         {this.props.nome1}  
-        </Text> 
-
+    </Text> 
       </View>
     )
   }
@@ -122,49 +156,77 @@ class SaladaCaesar extends Component {
 class SaladaCaprese extends Component {
   render() {
     return (
-      <View style={{ marginBottom: 20, padding: 1, borderRadius: 20, backgroundColor: '#ebd592', flexDirection: 'column', 
-      alignItems: 'center' }}>
-    
+      <View style={{ marginBottom: 20, padding: 1, borderRadius: 20, backgroundColor: '#ebd592',  flexDirection:  'column', 
+      alignItems: 'center'}}>
+
     <Image
-        source={this.props.imagem}
-        style={{ width: 150, height: 150, borderRadius: 75}}
-    />
+      source={this.props.imagem} style={{ width: 150,  height: 150, borderRadius: 75, marginTop: 10}}/>
 
-      <Text style={{ fontWeight: 'bold', fontSize: 40, fontFamily: 'Ink Free', padding: '15px'}}>
+    <Text style={{ fontWeight: 'bold', fontSize: 40, fontFamily: 'Ink Free', padding: '15px',  }}>
       {this.props.titulo}
-    </Text>
+    </Text> 
 
-        <Button
-        title="Vamos preparar? 🥗" onPress={this.props.entrar}/>
+    <TouchableOpacity onPress={this.props.entrar}
+      style={{backgroundColor: '#9f8241', paddingVertical: 12, paddingHorizontal: 25, borderRadius: 20, marginTop: 10, marginBottom: 20 }}>
+      
+      <Text style={{ fontSize: 30, color: 'white', fontWeight: 'bold',  fontFamily: 'Agency FB', textAlign: 'center' }}>
+        Ingredientes 🥗
+      </Text>
+    </TouchableOpacity>
 
-       <Text style={{fontSize: 30, color: 'red', textAlign:'center'}}>
+    <Text style={{
+      fontSize: 20,
+      color: '#4a3f35',
+      textAlign: 'left',
+      paddingHorizontal: 20,
+      paddingBottom: 20, 
+      lineHeight: 26,
+      fontFamily: 'Agency FB',
+      maxWidth: '90%',
+      fontWeight: 'bold'}}>
+
         {this.props.nome2}  
-        </Text>  
+    </Text> 
       </View>
     )
   }
 }
 
+
 class SaladaTropical extends Component {
   render() {
     return (
-      <View style={{ marginBottom: 20, padding: 1, borderRadius: 20, backgroundColor: '#ebd592', flexDirection: 'column', 
-      alignItems: 'center' }}>
-      
+      <View style={{ marginBottom: 20, padding: 1, borderRadius: 20, backgroundColor: '#ebd592',  flexDirection:  'column', 
+      alignItems: 'center'}}>
+
     <Image
-        source={this.props.imagem}
-        style={{ width: 150, height: 150, borderRadius: 75}}
-    />
+      source={this.props.imagem} style={{ width: 150,  height: 150, borderRadius: 75, marginTop: 10}}/>
 
-    <Text style={{ fontWeight: 'bold', fontSize: 40, fontFamily: 'Ink Free', padding: '15px'}}>
+    <Text style={{ fontWeight: 'bold', fontSize: 40, fontFamily: 'Ink Free', padding: '15px',  }}>
       {this.props.titulo}
-    </Text>
+    </Text> 
 
-        <Button
-       title="Vamos preparar? 🥗" onPress={this.props.entrar}/>
-        <Text style={{fontSize: 30, color: 'red', textAlign:'center'}}>
+    <TouchableOpacity onPress={this.props.entrar}
+      style={{backgroundColor: '#9f8241', paddingVertical: 12, paddingHorizontal: 25, borderRadius: 20, marginTop: 10, marginBottom: 20 }}>
+      
+      <Text style={{ fontSize: 30, color: 'white', fontWeight: 'bold',  fontFamily: 'Agency FB', textAlign: 'center' }}>
+        Ingredientes 🥗
+      </Text>
+    </TouchableOpacity>
+
+    <Text style={{
+      fontSize: 20,
+      color: '#4a3f35',
+      textAlign: 'left',
+      paddingHorizontal: 20,
+      paddingBottom: 20, 
+      lineHeight: 26,
+      fontFamily: 'Bernard MT Condensed',
+      maxWidth: '90%',
+      }}>
+
         {this.props.nome3}  
-        </Text> 
+    </Text> 
       </View>
     )
   }
@@ -173,24 +235,37 @@ class SaladaTropical extends Component {
 class SaladadeBatata extends Component {
   render() {
     return (
-      <View style={{ marginBottom: 20, padding: 1, borderRadius: 20, backgroundColor: '#ebd592', flexDirection: 'column', 
-      alignItems: 'center',  }}>
-        
-     
+      <View style={{ marginBottom: 20, padding: 1, borderRadius: 20, backgroundColor: '#ebd592',  flexDirection:  'column', 
+      alignItems: 'center'}}>
+
     <Image
-        source={this.props.imagem}
-        style={{ width: 150, height: 150, borderRadius: 75}}
-    />
+      source={this.props.imagem} style={{ width: 150,  height: 150, borderRadius: 75, marginTop: 10}}/>
 
-     <Text style={{ fontWeight: 'bold', fontSize: 40, fontFamily: 'Ink Free', padding: '15px',}}>
+    <Text style={{ fontWeight: 'bold', fontSize: 40, fontFamily: 'Ink Free', padding: '15px',  }}>
       {this.props.titulo}
-    </Text>
+    </Text> 
 
-        <Button
-      title="Vamos preparar? 🥗" onPress={this.props.entrar}/>
-        <Text style={{fontSize: 30, color: 'red', textAlign:'center'}}>
+    <TouchableOpacity onPress={this.props.entrar}
+      style={{backgroundColor: '#9f8241', paddingVertical: 12, paddingHorizontal: 25, borderRadius: 20, marginTop: 10, marginBottom: 20 }}>
+      
+      <Text style={{ fontSize: 30, color: 'white', fontWeight: 'bold',  fontFamily: 'Agency FB', textAlign: 'center' }}>
+        Ingredientes 🥗
+      </Text>
+    </TouchableOpacity>
+
+    <Text style={{
+      fontSize: 20,
+      color: '#4a3f35',
+      textAlign: 'left',
+      paddingHorizontal: 20,
+      paddingBottom: 20, 
+      lineHeight: 26,
+      fontFamily: 'Agency FB',
+      maxWidth: '90%',
+      fontWeight: 'bold'}}>
+
         {this.props.nome4}  
-        </Text> 
+    </Text> 
       </View>
     )
   }
@@ -199,33 +274,39 @@ class SaladadeBatata extends Component {
 class SaladaCamarao extends Component {
   render() {
     return (
-      <View style={{ marginBottom: 20, padding: 1, borderRadius: 20, backgroundColor: '#ebd592', flexDirection: 'column', 
-      alignItems: 'center' }}>
-      
+
+      //Style do Container//
+      <View style={{ marginBottom: 20, padding: 1, borderRadius: 20, backgroundColor: '#ebd592',  flexDirection:  'column', 
+      alignItems: 'center'}}>
+
     <Image
-        source={this.props.imagem}
-        style={{ width: 150, height: 150, borderRadius: 75}}
-    />
+      source={this.props.imagem} style={{ width: 150,  height: 150, borderRadius: 75, marginTop: 10}}/>
 
-    <Text style={{ fontWeight: 'bold', fontSize: 40, fontFamily: 'Ink Free', padding: '15px'}}>
+    <Text style={{ fontWeight: 'bold', fontSize: 40, fontFamily: 'Ink Free', padding: '15px',  }}>
       {this.props.titulo}
-    </Text>
+    </Text> 
 
-        {/* Usando apenas o TouchableOpacity */}
-        <TouchableOpacity
-          onPress={this.props.entrar}
-          style={{ 
-            backgroundColor: '#9f8241', paddingVertical: 12, paddingHorizontal: 25, borderRadius: 20, marginTop: 10 }}>
+    <TouchableOpacity onPress={this.props.entrar}
+      style={{backgroundColor: '#9f8241', paddingVertical: 12, paddingHorizontal: 25, borderRadius: 20, marginTop: 10, marginBottom: 20 }}>
+      
+      <Text style={{ fontSize: 30, color: 'white', fontWeight: 'bold',  fontFamily: 'Agency FB', textAlign: 'center' }}>
+        Ingredientes 🥗
+      </Text>
+    </TouchableOpacity>
 
+    <Text style={{
+      fontSize: 20,
+      color: '#4a3f35',
+      textAlign: 'left',
+      paddingHorizontal: 20,
+      paddingBottom: 20, 
+      lineHeight: 26,
+      fontFamily: 'Agency FB',
+      maxWidth: '90%',
+      fontWeight: 'bold'}}>
 
-          <Text style={{ fontSize: 20, color: 'white', fontWeight: 'bold',  fontFamily: 'Ink Free', textAlign: 'center' }}>
-            Vamos preparar? 🥗
-          </Text>
-        </TouchableOpacity>
-
-        <Text style={{ fontSize: 30, color: 'red', textAlign: 'center' }}>
-          {this.props.nome5}  
-        </Text> 
+     {this.props.nome5}  
+    </Text> 
       </View>
     )
   }
